@@ -15,7 +15,7 @@ from serial.tools import list_ports
 from .motor_controller import MotorState
 from .serial_controller import SerialController
 
-DEFAULT_PORT = "/dev/ttyACM0"
+DEFAULT_PORT = "COM3" if sys.platform.startswith("win") else "/dev/ttyACM0"
 
 
 class SerialService:

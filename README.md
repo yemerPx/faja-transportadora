@@ -97,3 +97,18 @@ En Fedora, instale preferentemente el archivo `.rpm`. El `.AppImage` permite
 ejecutar la aplicación sin instalarla. Ambos paquetes requieren que el usuario
 del equipo destino tenga permiso sobre el puerto serial, por ejemplo mediante
 el grupo `dialout`.
+
+## Instalador Windows mediante GitHub Actions
+
+No es necesario disponer de una computadora Windows. El workflow
+`.github/workflows/build-windows.yml` usa un runner Windows de GitHub para
+generar el instalador y el sidecar Python `.exe`.
+
+En GitHub, abra la pestaña **Actions**, seleccione **Compilar instalador
+Windows**, pulse **Run workflow** y espere a que finalice. Descargue el
+artefacto `FajaControl-Windows-x64`; contiene el instalador `.msi` y/o
+`setup.exe`.
+
+El usuario final de Windows solo instala ese archivo y selecciona el puerto
+Arduino detectado, por ejemplo `COM3` o `COM4`. No necesita instalar Python,
+Node.js, Rust ni Tauri.
